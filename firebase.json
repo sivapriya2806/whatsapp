@@ -1,0 +1,42 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "whatsapp-70290",
+          "appId": "1:439024699088:android:72bb07170a0e0b0caf80d5",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "whatsapp-70290",
+          "configurations": {
+            "android": "1:439024699088:android:72bb07170a0e0b0caf80d5",
+            "ios": "1:439024699088:ios:e12bedbed2843d1baf80d5",
+            "macos": "1:439024699088:ios:e12bedbed2843d1baf80d5",
+            "web": "1:439024699088:web:6e123fcfc891e468af80d5",
+            "windows": "1:439024699088:web:3117855e47cd366caf80d5"
+          }
+        }
+      }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint",
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ]
+}
