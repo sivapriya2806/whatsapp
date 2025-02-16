@@ -7,6 +7,8 @@ import 'package:whatsapp_messenger/common/routes/routes.dart';
 import 'package:whatsapp_messenger/common/theme/dark_theme.dart';
 import 'package:whatsapp_messenger/common/theme/light_theme.dart';
 import 'package:whatsapp_messenger/feature/auth/controller/auth_controller.dart';
+import 'package:whatsapp_messenger/feature/auth/services/local_notification.dart';
+import 'package:whatsapp_messenger/feature/auth/services/local_notification_service.dart';
 import 'package:whatsapp_messenger/feature/auth/services/notification_service.dart';
 import 'package:whatsapp_messenger/feature/home/pages/home_page.dart';
 import 'package:whatsapp_messenger/feature/welcome/pages/welcome_page.dart';
@@ -61,6 +63,7 @@ void main() async {
   final notificationService = NotificationService();
   await notificationService.loadBlockedArray();
   notificationService.initialize();
+  await NewLocalNotificationService.init();
 
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
